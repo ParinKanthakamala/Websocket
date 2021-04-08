@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://digidocs.org/img/logo.svg" width="60px" height="80px">
+    <img src="myself.png" width="80px" height="80px">
 </p>
 
 <h1 align="center">Digidocs PHP WebSockets</h1>
