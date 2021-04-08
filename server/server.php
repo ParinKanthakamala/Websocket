@@ -1,7 +1,7 @@
 <?php
 
-use Digidocs\WebSocket\Application\StatusApplication;
 use \Digidocs\Hubs\Chat;
+use \Digidocs\WebSocket\Application\StatusApplication;
 use \Digidocs\WebSocket\Server;
 
 require './vendor/autoload.php';
@@ -21,4 +21,3 @@ $server->setMaxConnectionsPerIp( 100 );
 $server->registerApplication( 'status', StatusApplication::getInstance() );
 $server->registerApplication( 'chat', Chat::getInstance() );
 $server->run();
-
