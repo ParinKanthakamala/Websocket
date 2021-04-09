@@ -196,7 +196,7 @@ class Connection
                 $httpHeader .= '403 Forbidden';
                 break;
             case 404:
-                $httpHeader .= '404 Not Found';
+                $httpHeader .= '404 Not Foundvaf';
                 break;
             case 501:
                 $httpHeader .= '501 Not Implemented';
@@ -365,7 +365,7 @@ class Connection
     {
         $this->log('Disconnected', 'info');
         $this->close(1000);
-    }
+    } 
 
     /**
      * Writes a log message.
