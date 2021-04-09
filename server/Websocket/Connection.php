@@ -69,6 +69,10 @@ class Connection
         $this->log('Connected');
     }
 
+
+
+
+
     /**
      * Handles the client-server handshake.
      *
@@ -291,8 +295,7 @@ class Connection
      * @return bool
      */
     public function send(string $payload, string $type = 'text', bool $masked = false): bool
-    {
-
+    { 
         try {
             $encodedData = $this->hybi10Encode($payload, $type, $masked);
             $this->server->writeBuffer($this->socket, $encodedData);
@@ -342,7 +345,7 @@ class Connection
         }
 
         if ($this->send($payload, 'close', false) === false) {
-            return;
+            // return;
         }
 
         if ($this->application) {
@@ -598,4 +601,8 @@ class Connection
     {
         return $this->application;
     }
+
+ 
+
+
 }

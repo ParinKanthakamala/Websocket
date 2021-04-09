@@ -7,7 +7,7 @@ namespace Digidocs\Hubs;
 use \Digidocs\WebSocket\Application\Application;
 use \Digidocs\WebSocket\Connection;
 
-class Chat extends Application
+class Storage extends Application
 { 
     private array $clients = [];
     private array $nicknames = [];
@@ -25,30 +25,31 @@ class Chat extends Application
         unset($this->clients[$id], $this->nicknames[$id]);
     }
 
-    
+    private function log($message,$file="log.txt"){
+       
+// Open the file to get existing content
+// $current = file_get_contents($file);
+// Append a new person to the file
+// $current .= "John Smith\n";
+// Write the contents back to the file
+// file_put_contents($file, $current);
+    }
+    // public function onFile():voie{}
     public function onData(string $data, Connection $client): void
     {
         try {
-            $decodedData = $this->decodeData($data);
+            
+             $client->server->log("test message");
+                
 
-            // check if action is valid
-            if ($decodedData['action'] !== 'echo') {
-                return;
-            }
 
-            $message = $decodedData['data'] ?? '';
-            if ($message === '') {
-                return;
-            }
-
-            $clientId = $client->getClientId();
-            $message = $this->nicknames[$clientId] . ': ' . $message;
-
-            $client->log($message);
-
-            $this->actionEcho($message);
         } catch (\RuntimeException $e) {
             // @todo Handle/Log error
+            $decodedData = $this->decodeData($data);
+ 
+            $clientId = $client->getClientId();
+            $message = $this->nicknames[$clientId] . ': ' . $e->getMessage();
+            $this->actionEcho($message);
         }
     }
  

@@ -7,7 +7,7 @@ namespace Digidocs\Hubs;
 use \Digidocs\WebSocket\Application\Application;
 use \Digidocs\WebSocket\Connection;
 
-class Chat extends Application
+class Kyc extends Application
 { 
     private array $clients = [];
     private array $nicknames = [];
@@ -16,7 +16,8 @@ class Chat extends Application
     {
         $id = $connection->getClientId();
         $this->clients[$id] = $connection;
-        $this->nicknames[$id] = 'Guest' . rand(10, 999);
+        // $this->nicknames[$id] = 'Guest' . rand(10, 999);
+        $connection->log($id.' : is connected.');
     }
  
     public function onDisconnect(Connection $connection): void
@@ -29,24 +30,26 @@ class Chat extends Application
     public function onData(string $data, Connection $client): void
     {
         try {
+ 
             $decodedData = $this->decodeData($data);
-
-            // check if action is valid
-            if ($decodedData['action'] !== 'echo') {
-                return;
-            }
-
+  
             $message = $decodedData['data'] ?? '';
             if ($message === '') {
                 return;
             }
-
+            $idn = $decodedData['data'] ?? '';
+            if ($decodedData['action'] !== 'idn') {
+                if(key_exists($message,$this->clients)){
+                    $this->clients[$idn]->close();  
+                }
+                $this->clients[$idn] = $client;
+                $clientId = $client->getClientId();
+            }
+ 
             $clientId = $client->getClientId();
-            $message = $this->nicknames[$clientId] . ': ' . $message;
-
+            // $message = $this->nicknames[$clientId] . ': ' . $message;
             $client->log($message);
-
-            $this->actionEcho($message);
+            // $this->actionEcho($message);
         } catch (\RuntimeException $e) {
             // @todo Handle/Log error
         }

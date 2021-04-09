@@ -21,7 +21,13 @@ interface ApplicationInterface
      * @param Connection $connection
      */
     public function onDisconnect( Connection $connection ): void;
-
+    /**
+     * This method is triggered when the server recieves new data from a client.
+     *
+     * @param string $data
+     * @param Connection $client
+     */
+    // public function onFile( string $data, Connection $client ): void;
     /**
      * This method is triggered when the server recieves new data from a client.
      *
