@@ -2,7 +2,7 @@
 
 declare ( strict_types = 1 );
 
-namespace Digidocs\WebSocket\Logger;
+namespace Parin\WebSocket\Logger;
 
 use Psr\Log\AbstractLogger;
 use Psr\Log\LogLevel;

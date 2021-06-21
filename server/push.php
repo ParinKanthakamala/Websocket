@@ -9,7 +9,7 @@ require __DIR__ . './Websocket/PushClient.php';
  * In this case a system message is sent to the chat demo application.
  */
 
-$pushClient = new \Digidocs\WebSocket\PushClient( '//tmp/phpwss.sock' );
+$pushClient = new \Parin\WebSocket\PushClient( '//tmp/phpwss.sock' );
 $pushClient->sendToApplication( 'chat', [
     'action' => 'echo',
     'data'   => 'Hello from the PushClient!',

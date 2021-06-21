@@ -2,9 +2,9 @@
 
 declare ( strict_types = 1 );
 
-namespace Digidocs\WebSocket\Application;
+namespace Parin\WebSocket\Application;
 
-use Digidocs\WebSocket\Connection;
+use Parin\WebSocket\Connection;
 
 interface ApplicationInterface
 {

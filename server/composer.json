@@ -1,14 +1,14 @@
 {
-    "name": "digidocs/php-websocket",
+    "name": "Parin/php-websocket",
     "description": "A simple WebSocket Server and Client implementation in PHP.",
     "keywords": [
         "php",
         "websockets",
         "websocket-server",
-        "Digidocs"
+        "Parin"
     ],
     "license": "MIT",
-    "homepage": "https://digidocs.asia",
+    "homepage": "https://localhost",
     "authors": [
         {
             "name": "",
@@ -17,8 +17,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "Digidocs\\WebSocket\\": "Websocket/",
-            "Digidocs\\Hubs\\": "Hubs/"
+            "Parin\\WebSocket\\": "Websocket/",
+            "Parin\\Hubs\\": "Hubs/"
         }
     },
     "require": {

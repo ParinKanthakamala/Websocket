@@ -2,7 +2,7 @@
     <img src="myself.png" width="80px" height="80px">
 </p>
 
-<h1 align="center">Digidocs PHP WebSockets</h1>
+<h1 align="center">Parin PHP WebSockets</h1>
 
 <p align="center">
     Simple WebSocket server implemented in PHP.
@@ -31,7 +31,7 @@
 
 <!-- ### Installation procedure -->
 <!-- Install the package using composer: -->
-<!-- `composer require Digidocs/php-websocket` -->
+<!-- `composer require Parin/php-websocket` -->
 
 ## Usage
 
@@ -43,9 +43,9 @@ Here is a basic exmaple:
 <?php
 
 // require necessary files here
-use \Digidocs\WebSocket\Server;
-use \Digidocs\WebSocket\Application\StatusApplication;
-use \Digidocs\Hubs\Chat;
+use \Parin\WebSocket\Server;
+use \Parin\WebSocket\Application\StatusApplication;
+use \Parin\Hubs\Chat;
 // create new server instance
 $server = new Server('127.0.0.1', 8000, '/tmp/phpwss.sock');
 
@@ -106,8 +106,8 @@ A common requirement for long-running processes such as a websocket server is to
 be done using timers. Timers can execute methods within your server or application periodically. Here is an example:
 
 ```php
-use \Digidocs\WebSocket\Server;
-use \Digidocs\Hubs\Chat;
+use \Parin\WebSocket\Server;
+use \Parin\Hubs\Chat;
 $server = new Server('127.0.0.1', 8000, '/tmp/phpwss.sock');
 $chat = Chat::getInstance();
 $server->addTimer(5000, function () use ($chat) {
@@ -129,7 +129,7 @@ When starting the websocket server, it opens a unix-domain-socket and listens fo
 then be used to send these messages. Here is an example:
 
 ```php
-use \Digidocs\WebSocket\PushClient;
+use \Parin\WebSocket\PushClient;
 $pushClient = new PushClient('//tmp/phpwss.sock');
 $pushClient->sendToApplication('chat', [
     'action' => 'echo',
@@ -190,4 +190,4 @@ listed below.
 
 ## License
 
-Digidocs
+Parin

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Digidocs\Hubs;
+namespace Parin\Hubs;
 
-use \Digidocs\WebSocket\Application\Application;
-use \Digidocs\WebSocket\Connection;
+use \Parin\WebSocket\Application\Application;
+use \Parin\WebSocket\Connection;
 
 class Chat extends Application
 { 

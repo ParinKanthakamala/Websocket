@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Digidocs\WebSocket;
+namespace Parin\WebSocket;
 
 final class Timer
 {

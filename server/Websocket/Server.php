@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Digidocs\WebSocket;
+namespace Parin\WebSocket;
 
-use Digidocs\WebSocket\Application\ApplicationInterface;
+use Parin\WebSocket\Application\ApplicationInterface;
 use Psr\Log\LoggerInterface;
 
  
