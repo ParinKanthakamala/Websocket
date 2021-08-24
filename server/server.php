@@ -20,6 +20,5 @@ $server->setMaxConnectionsPerIp( 100 );
 
 // maxx : add hub application add your applications
 $server->registerApplication( 'status', StatusApplication::getInstance() );
-$server->registerApplication( 'chat', Chat::getInstance() );
-$server->registerApplication( 'kyc', Kyc::getInstance() );
+$server->registerApplication( 'chat', Chat::getInstance() ); 
 $server->run();
