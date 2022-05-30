@@ -2,7 +2,7 @@
 
 declare ( strict_types = 1 );
 
-namespace Parin\WebSocket\Logger;
+namespace WebSocket\Logger;
 
 use Psr\Log\AbstractLogger;
 use Psr\Log\LogLevel;

@@ -43,9 +43,9 @@ Here is a basic exmaple:
 <?php
 
 // require necessary files here
-use \Parin\WebSocket\Server;
-use \Parin\WebSocket\Application\StatusApplication;
-use \Parin\Hubs\Chat;
+use \WebSocket\Server;
+use \WebSocket\Application\StatusApplication;
+use \Hubs\Chat;
 // create new server instance
 $server = new Server('127.0.0.1', 8000, '/tmp/phpwss.sock');
 
@@ -106,8 +106,8 @@ A common requirement for long-running processes such as a websocket server is to
 be done using timers. Timers can execute methods within your server or application periodically. Here is an example:
 
 ```php
-use \Parin\WebSocket\Server;
-use \Parin\Hubs\Chat;
+use \WebSocket\Server;
+use \Hubs\Chat;
 $server = new Server('127.0.0.1', 8000, '/tmp/phpwss.sock');
 $chat = Chat::getInstance();
 $server->addTimer(5000, function () use ($chat) {
@@ -129,7 +129,7 @@ When starting the websocket server, it opens a unix-domain-socket and listens fo
 then be used to send these messages. Here is an example:
 
 ```php
-use \Parin\WebSocket\PushClient;
+use \WebSocket\PushClient;
 $pushClient = new PushClient('//tmp/phpwss.sock');
 $pushClient->sendToApplication('chat', [
     'action' => 'echo',
@@ -183,11 +183,4 @@ Also, some "features" are missing by design:
 
 In case you need a more "robust" websocket server written in PHP, please have a look at the excellent alternatives
 listed below.
-
-<!-- ## Alternatives -->
-<!-- * [Ratchet](https://github.com/ratchetphp/Ratchet) -->
-<!-- * [Wrench](https://github.com/varspool/Wrench) -->
-
-## License
-
-Parin
+ 

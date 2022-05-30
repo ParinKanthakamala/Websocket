@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Parin\WebSocket\Application;
+namespace WebSocket\Application;
 
 abstract class Application implements ApplicationInterface
 {

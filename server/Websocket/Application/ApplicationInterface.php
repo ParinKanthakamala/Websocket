@@ -2,9 +2,9 @@
 
 declare ( strict_types = 1 );
 
-namespace Parin\WebSocket\Application;
+namespace WebSocket\Application;
 
-use Parin\WebSocket\Connection;
+use WebSocket\Connection;
 
 interface ApplicationInterface
 {

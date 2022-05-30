@@ -1,16 +1,15 @@
 <?php
 
-use \Parin\Hubs\Chat;
-use \Parin\Hubs\Kyc;
-use \Parin\WebSocket\Application\StatusApplication;
-use \Parin\WebSocket\Server;
+use \Hubs\Chat; 
+use \WebSocket\Application\StatusApplication;
+use \WebSocket\Server;
 
 require './vendor/autoload.php';
 
 $server = new Server( '127.0.0.1', 8000, '/tmp/phpwss.sock' );
 
 // maxx : add a PSR-3 compatible logger (optional)
-$server->setLogger( new \Parin\WebSocket\Logger\StdOutLogger() );
+$server->setLogger( new \WebSocket\Logger\StdOutLogger() );
 
 // maxx : server settings
 $server->setMaxClients( 100 );

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Parin\WebSocket;
+namespace WebSocket;
 
 final class TimerCollection
 {

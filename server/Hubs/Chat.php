@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Parin\Hubs;
+namespace Hubs;
 
-use \Parin\WebSocket\Application\Application;
-use \Parin\WebSocket\Connection;
+use \WebSocket\Application\Application;
+use \WebSocket\Connection;
 
 class Chat extends Application
 { 

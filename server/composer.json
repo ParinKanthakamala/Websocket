@@ -17,8 +17,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "Parin\\WebSocket\\": "Websocket/",
-            "Parin\\Hubs\\": "Hubs/"
+            "\WebSocket\\": "Websocket/",
+            "\Hubs\\": "Hubs/"
         }
     },
     "require": {

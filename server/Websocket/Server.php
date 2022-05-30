@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Parin\WebSocket;
+namespace WebSocket;
 
-use Parin\WebSocket\Application\ApplicationInterface;
+use WebSocket\Application\ApplicationInterface;
 use Psr\Log\LoggerInterface;
 
  
